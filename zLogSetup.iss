@@ -6,6 +6,7 @@
 //  This software is released under the MIT License.
 //
 [Setup]
+WizardStyle=modern
 
 // アプリ名
 AppName=zLog
@@ -35,13 +36,20 @@ AppCopyright=COPYRIGHT(C) 2024 JR8PPG
 // インストール後に情報／READMEの表示
 InfoAfterFile=files\readme.txt
 
+DisableProgramGroupPage=yes
+
 [Types]
+Name: "std"; Description: "標準セットアップ"
 Name: "full"; Description: "フルセットアップ"
 Name: "compact"; Description: "最小セットアップ"
+Name: "custom"; Description: "カスタムセットアップ"; Flags: iscustom
 
 [Components]
-Name: "Main"; Description: "zLog基本ファイル"; Types: full compact;
-Name: "CfgDat"; Description: "ユーザー定義コンテスト"; Types: full
+Name: "Main"; Description: "zLog基本ファイル"; Types: std full compact custom; Flags: fixed;
+Name: "Options"; Description: "オプション"; Types: std full
+Name: "Options\CfgDatJa"; Description: "ユーザー定義コンテスト（国内）"; Types: std full
+Name: "Options\CfgDatDx"; Description: "ユーザー定義コンテスト（ＤＸ）"; Types: full
+Name: "Options\Documents"; Description: "各種ドキュメント"; Types: std full
 
 [Tasks]
 Name: desktopicon; Description: "デスクトップにアイコンを作成する"; GroupDescription: "追加のタスク:"; Components: Main
@@ -66,15 +74,20 @@ Source: files\x86\zlog.exe; DestDir: {app}; Components: Main; Flags: 32bit;
 Source: files\zlog.ini; DestDir: {app};
 Source: files\cty.dat; DestDir: {app}; Components: Main;
 Source: files\cty_copyright.txt; DestDir: {app}; Components: Main;
-Source: files\clusterlist.txt; DestDir: {app}; Components: Main;
-Source: files\ZLOGHELP.TXT; DestDir: {app}; Components: Main;
+Source: files\clusterlist.txt; DestDir: {app}; Components: Main; Flags: onlyifdoesntexist;
+Source: files\ZLOGHELP.TXT; DestDir: {app}; Components: Main; Flags: onlyifdoesntexist;
 
-// CFG&DAT
-Source: files\cfg_dat\*.*; DestDir: {app}\cfg_dat; Components: CfgDat;
+// CFG&DAT(JA)
+Source: files\cfg_dat\*.*; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatJa"; Flags: onlyifdoesntexist;
+
+// CFG&DAT(DX)
+Source: files\cfg_dat_dx\arrl160\*.*; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; Flags: onlyifdoesntexist;
+Source: files\cfg_dat_dx\dxcfg12\*.*; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; Flags: onlyifdoesntexist;
+Source: files\cfg_dat_dx\eudx\*.*; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; Flags: onlyifdoesntexist;
 
 // Documents
-Source: "files\ZLOG 令和EDITION V2.9 リグコントロール設定.pdf"; DestDir: {app}; Components: Main;
-Source: "files\zlog_v2922_release_note.pdf"; DestDir: {app}; Components: Main;
+Source: "files\ZLOG 令和EDITION V2.9 リグコントロール設定.pdf"; DestDir: {app}; Components: "Options\Documents";
+Source: "files\zlog_v2922_release_note.pdf"; DestDir: {app}; Components: "Options\Documents";
 
 [#Dirs]
 Name: "{app}\cfg_dat"
