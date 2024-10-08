@@ -7,6 +7,8 @@
 //
 [Setup]
 WizardStyle=modern
+ArchitecturesAllowed=x86compatible or x64compatible
+ArchitecturesInstallIn64BitMode=x64compatible
 
 // アプリ名
 AppName=zLog
@@ -78,12 +80,16 @@ Source: files\clusterlist.txt; DestDir: {app}; Components: Main; Flags: onlyifdo
 Source: files\ZLOGHELP.TXT; DestDir: {app}; Components: Main; Flags: onlyifdoesntexist;
 
 // CFG&DAT(JA)
-Source: files\cfg_dat\*.*; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatJa"; Flags: onlyifdoesntexist;
+Source: files\cfg_dat\*.cfg; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatJa"; BeforeInstall: BeforeCfgInstall; AfterInstall: AfterCfgInstall;
+Source: files\cfg_dat\*.dat; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatJa";
 
 // CFG&DAT(DX)
-Source: files\cfg_dat_dx\arrl160\*.*; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; Flags: onlyifdoesntexist;
-Source: files\cfg_dat_dx\dxcfg12\*.*; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; Flags: onlyifdoesntexist;
-Source: files\cfg_dat_dx\eudx\*.*; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; Flags: onlyifdoesntexist;
+Source: files\cfg_dat_dx\arrl160\*.cfg; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; BeforeInstall: BeforeCfgInstall; AfterInstall: AfterCfgInstall;
+Source: files\cfg_dat_dx\arrl160\*.dat; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx";
+Source: files\cfg_dat_dx\dxcfg12\*.cfg; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; BeforeInstall: BeforeCfgInstall; AfterInstall: AfterCfgInstall;
+Source: files\cfg_dat_dx\dxcfg12\*.dat; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx";
+Source: files\cfg_dat_dx\eudx\*.cfg; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; BeforeInstall: BeforeCfgInstall; AfterInstall: AfterCfgInstall;
+Source: files\cfg_dat_dx\eudx\*.dat; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx";
 
 // Documents
 Source: "files\ZLOG 令和EDITION V2.9 リグコントロール設定.pdf"; DestDir: {app}; Components: "Options\Documents";
@@ -152,7 +158,7 @@ begin
       SetIniString('SuperCheck', 'Folder', S6, ini);
       SetIniString('zylo', 'path', S7, ini);
 
-      S1 := UserPage.Values[0];
+      S1 := UpperCase(UserPage.Values[0]);
       S2 := UserPage.Values[1];
       S3 := UserPage.Values[2];
       S4 := UserPage2.Values[0];
@@ -190,7 +196,7 @@ begin
       ini := ExpandConstant('{app}') + '\zlog.ini';
 
       if FileExists(ini) = False then begin
-         FileCopy('files\zlog.ini', ini, True);
+         FileCopy('files\zlog.ini', ini, False);
       end;
 
       UserPage.Values[0] := GetIniString('Categories', 'MyCall', '', ini);
@@ -200,5 +206,110 @@ begin
       UserPage2.Values[1] := GetIniString('Profiles', 'IARUZone', '45', ini);
    end;
 
+   Result := True;
+end;
+
+procedure CopyCfgItem(from_cfg, to_cfg: TStringList; item: string);
+var
+   i: Integer;
+   S: string;
+   line: string;
+begin
+   line := '';
+   for i := 0 to from_cfg.Count - 1 do begin
+      S := from_cfg.Strings[i];
+      if item = UpperCase(Copy(S, 1, Length(item))) then begin
+         line := S;
+         Break;
+      end;
+   end;
+
+   if line = '' then begin
+      Exit;
+   end;
+   
+   for i := 0 to to_cfg.Count - 1 do begin
+      S := to_cfg.Strings[i];
+      if item = UpperCase(Copy(S, 1, Length(item))) then begin
+         to_cfg.Strings[i] := line;
+         Break;
+      end;
+   end;   
+end;
+
+procedure BeforeCfgInstall();
+var
+   dstfile: string;
+begin
+   dstfile := CurrentFileName;
+   StringChange(dstfile, '{app}', ExpandConstant('{app}'));
+
+   if FileExists(dstfile) = True then begin
+      FileCopy(dstfile, dstfile + '.bak', False);
+   end;
+end;
+
+procedure AfterCfgInstall();
+var
+   SRC: TStringList;
+   DST: TStringList;
+   S1, S2: string;
+   srcfile, dstfile: string;
+begin
+   SRC := TStringList.Create();
+   DST := TStringList.Create();
+
+   dstfile := CurrentFileName;
+   StringChange(dstfile, '{app}', ExpandConstant('{app}'));
+
+   srcfile := dstfile + '.bak';
+      
+   // 元ファイル
+   SRC.LoadFromFile(srcfile);
+   
+   // 新ファイル
+   if FileExists(dstfile) = True then begin
+      DST.LoadFromFile(dstfile);
+
+      // 中身が同じならスキップ
+      S1 := SRC.Text;
+      S2 := DST.Text;
+      if S1 = S2 then begin
+         SRC.Free();
+         DST.Free();
+         DeleteFile(srcfile);
+         Exit;
+      end;
+      
+      // 元ファイル(DST)から新ファイル(SRC)に項目コピー
+      CopyCfgItem(SRC, DST, 'PROV');
+      CopyCfgItem(SRC, DST, 'CITY');
+      CopyCfgItem(SRC, DST, 'F1_A');
+      CopyCfgItem(SRC, DST, 'F2_A');
+      CopyCfgItem(SRC, DST, 'F3_A');
+      CopyCfgItem(SRC, DST, 'F4_A');
+      CopyCfgItem(SRC, DST, 'F5_A');
+      CopyCfgItem(SRC, DST, 'F6_A');
+      CopyCfgItem(SRC, DST, 'F7_A');
+      CopyCfgItem(SRC, DST, 'F8_A');
+      CopyCfgItem(SRC, DST, 'F1_B');
+      CopyCfgItem(SRC, DST, 'F2_B');
+      CopyCfgItem(SRC, DST, 'F3_B');
+      CopyCfgItem(SRC, DST, 'F4_B');
+      CopyCfgItem(SRC, DST, 'F5_B');
+      CopyCfgItem(SRC, DST, 'F6_B');
+      CopyCfgItem(SRC, DST, 'F7_B');
+      CopyCfgItem(SRC, DST, 'F8_B');
+   end;
+   
+   // dstfileに保存
+   DST.SaveToFile(dstfile);
+   
+   SRC.Free();
+   DST.Free();
+end;
+
+function CheckCfgFile(): Boolean;
+begin
    Result := True;
 end;
