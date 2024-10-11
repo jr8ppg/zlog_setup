@@ -61,16 +61,16 @@ Name: "{userdesktop}\zLog"; Filename: "{app}\zlog.exe"; Components: Main; Tasks:
 
 [Files]
 // x64 files
-Source: files\x64\zlog.JPN; DestDir: {app}; Components: Main; Flags: 64bit;
-Source: files\x64\zlog_keyedit.exe; DestDir: {app}; Components: Main; Flags: 64bit;
-Source: files\x64\zlog_telnet.exe; DestDir: {app}; Components: Main; Flags: 64bit;
-Source: files\x64\zlog.exe; DestDir: {app}; Components: Main; Flags: 64bit;
+Source: files\x64\zlog.JPN; DestDir: {app}; Components: Main; Flags: ignoreversion; Check: Is64BitInstallMode;
+Source: files\x64\zlog_keyedit.exe; DestDir: {app}; Components: Main; Flags: ignoreversion; Check: Is64BitInstallMode;
+Source: files\x64\zlog_telnet.exe; DestDir: {app}; Components: Main; Flags: ignoreversion; Check: Is64BitInstallMode;
+Source: files\x64\zlog.exe; DestDir: {app}; Components: Main; Flags: ignoreversion; Check: Is64BitInstallMode;
 
 // x86 files
-Source: files\x86\zlog.JPN; DestDir: {app}; Components: Main; Flags: 32bit;
-Source: files\x86\zlog_keyedit.exe; DestDir: {app}; Components: Main; Flags: 32bit;
-Source: files\x86\zlog_telnet.exe; DestDir: {app}; Components: Main; Flags: 32bit;
-Source: files\x86\zlog.exe; DestDir: {app}; Components: Main; Flags: 32bit;
+Source: files\x86\zlog.JPN; DestDir: {app}; Components: Main; Flags: ignoreversion; Check: not Is64BitInstallMode;
+Source: files\x86\zlog_keyedit.exe; DestDir: {app}; Components: Main; Flags: ignoreversion; Check: not Is64BitInstallMode;
+Source: files\x86\zlog_telnet.exe; DestDir: {app}; Components: Main; Flags: ignoreversion; Check: not Is64BitInstallMode;
+Source: files\x86\zlog.exe; DestDir: {app}; Components: Main; Flags: ignoreversion; Check: not Is64BitInstallMode;
 
 // common files
 Source: files\zlog.ini; DestDir: {app};
