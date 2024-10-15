@@ -84,16 +84,16 @@ Source: files\clusterlist.txt; DestDir: {app}; Components: Main; Flags: onlyifdo
 Source: files\ZLOGHELP.TXT; DestDir: {app}; Components: Main; Flags: onlyifdoesntexist;
 
 // CFG&DAT(JA)
-Source: files\cfg_dat\*.cfg; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatJa"; BeforeInstall: BeforeCfgInstall; AfterInstall: AfterCfgInstall;
-Source: files\cfg_dat\*.dat; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatJa";
+Source: files\cfg_dat\*.cfg; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatJa"; BeforeInstall: BeforeCfgInstall; AfterInstall: AfterCfgInstall; Flags: uninsneveruninstall;
+Source: files\cfg_dat\*.dat; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatJa"; Flags: uninsneveruninstall;
 
 // CFG&DAT(DX)
-Source: files\cfg_dat_dx\arrl160\*.cfg; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; BeforeInstall: BeforeCfgInstall; AfterInstall: AfterCfgInstall;
-Source: files\cfg_dat_dx\arrl160\*.dat; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx";
-Source: files\cfg_dat_dx\dxcfg12\*.cfg; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; BeforeInstall: BeforeCfgInstall; AfterInstall: AfterCfgInstall;
-Source: files\cfg_dat_dx\dxcfg12\*.dat; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx";
-Source: files\cfg_dat_dx\eudx\*.cfg; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; BeforeInstall: BeforeCfgInstall; AfterInstall: AfterCfgInstall;
-Source: files\cfg_dat_dx\eudx\*.dat; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx";
+Source: files\cfg_dat_dx\arrl160\*.cfg; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; BeforeInstall: BeforeCfgInstall; AfterInstall: AfterCfgInstall; Flags: uninsneveruninstall;
+Source: files\cfg_dat_dx\arrl160\*.dat; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; Flags: uninsneveruninstall;
+Source: files\cfg_dat_dx\dxcfg12\*.cfg; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; BeforeInstall: BeforeCfgInstall; AfterInstall: AfterCfgInstall; Flags: uninsneveruninstall;
+Source: files\cfg_dat_dx\dxcfg12\*.dat; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; Flags: uninsneveruninstall;
+Source: files\cfg_dat_dx\eudx\*.cfg; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; BeforeInstall: BeforeCfgInstall; AfterInstall: AfterCfgInstall; Flags: uninsneveruninstall;
+Source: files\cfg_dat_dx\eudx\*.dat; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; Flags: uninsneveruninstall;
 
 // Documents
 Source: "files\ZLOG 令和EDITION V2.9 リグコントロール設定.pdf"; DestDir: {app}; Components: "Options\Documents";
