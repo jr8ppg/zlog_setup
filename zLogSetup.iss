@@ -119,12 +119,33 @@ Name: japanese; MessagesFile: compiler:Languages\Japanese.isl
 var
   UserPage: TInputQueryWizardPage;
   UserPage2: TInputQueryWizardPage;
+  BakString: string;
+  RootFolder: string;
+  CfgDatFolder: string;
+
+procedure CheckOldDat(folder: string; datfile: string);
+var
+   S: string;
+   D: string;
+begin
+   S := folder + '\' + datfile;
+   D := folder + '\' + datfile + BakString;
+   if FileExists(S) then begin
+      if FileExists(D) then begin
+         DeleteFile(D);
+      end;
+      RenameFile(S, D);
+
+      MsgBox(S + ' を、' + datfile + BakString + ' へリネームしました.', mbInformation, MB_OK);
+
+      Exit;
+   end;
+end;
 
 procedure CurStepChanged(CurStep: TSetupStep);
 var
    S1,S2,S3,S4,S5,S6,S7: string;
    ini: string;
-   ROOT: string;
 begin
    if CurStep = ssPostInstall then begin
       ini := ExpandConstant('{app}') + '\zlog.ini';
@@ -137,18 +158,20 @@ begin
       S7 := GetIniString('zylo', 'path', 'plugin', ini);
    
       if S1 = '%ZLOG_ROOT%' then begin
-         ROOT := ExpandConstant('{app}');
+         RootFolder := ExpandConstant('{app}');
       end
       else begin
-         ROOT := S1;
+         RootFolder := S1;
       end;
+
+      CfgDatFolder := RootFolder + '\' + S2;
       
-      CreateDir(ROOT + '\' + S2);
-      CreateDir(ROOT + '\' + S3);
-      CreateDir(ROOT + '\' + S4);
-      CreateDir(ROOT + '\' + S5);
-      CreateDir(ROOT + '\' + S6);
-      CreateDir(ROOT + '\' + S7);
+      CreateDir(CfgDatFolder);
+      CreateDir(RootFolder + '\' + S3);
+      CreateDir(RootFolder + '\' + S4);
+      CreateDir(RootFolder + '\' + S5);
+      CreateDir(RootFolder + '\' + S6);
+      CreateDir(RootFolder + '\' + S7);
       
       SetIniString('Preferences', 'RootPath', S1, ini);
       SetIniString('Preferences', 'CFGDATPath', S2, ini);
@@ -186,6 +209,8 @@ begin
       'ステーション情報', 'コンテストに必要な情報を入力してください。', 'CQゾーン,ITUゾーン番号を入力してください。');
    UserPage2.Add('CQ Zone($Z):', False);
    UserPage2.Add('ITU Zone($I):', False);
+   
+   BakString := '.' + GetDateTimeString('yyyymmdd', #0, #0);
 end;
 
 function NextButtonClick(CurPageID: Integer): Boolean;
@@ -206,6 +231,13 @@ begin
       UserPage2.Values[1] := GetIniString('Profiles', 'IARUZone', '45', ini);
    end;
 
+   if CurPageID = wpInfoAfter then begin
+      CheckOldDat(CfgDatFolder, 'XPO.DAT');
+      CheckOldDat(RootFolder, 'XPO.DAT');
+      CheckOldDat(CfgDatFolder, 'ACAG.DAT');
+      CheckOldDat(RootFolder, 'ACAG.DAT');
+   end;
+   
    Result := True;
 end;
 
@@ -245,7 +277,7 @@ begin
    StringChange(dstfile, '{app}', ExpandConstant('{app}'));
 
    if FileExists(dstfile) = True then begin
-      FileCopy(dstfile, dstfile + '.bak', False);
+      FileCopy(dstfile, dstfile + BakString, False);
    end;
 end;
 
@@ -262,7 +294,7 @@ begin
    dstfile := CurrentFileName;
    StringChange(dstfile, '{app}', ExpandConstant('{app}'));
 
-   srcfile := dstfile + '.bak';
+   srcfile := dstfile + BakString;
       
    // 元ファイル
    SRC.LoadFromFile(srcfile);
