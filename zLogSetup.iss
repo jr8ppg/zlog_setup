@@ -38,7 +38,11 @@ AppCopyright=COPYRIGHT(C) 2024 JR8PPG
 // インストール後に情報／READMEの表示
 InfoAfterFile=files\readme.txt
 
+// プログラムグループの選択ページの"禁止"の要否
 DisableProgramGroupPage=yes
+
+// デフォルトフォルダ名を追加するか
+AppendDefaultDirName=no
 
 [Types]
 Name: "std"; Description: "標準セットアップ"
@@ -236,6 +240,8 @@ begin
       CheckOldDat(RootFolder, 'XPO.DAT');
       CheckOldDat(CfgDatFolder, 'ACAG.DAT');
       CheckOldDat(RootFolder, 'ACAG.DAT');
+      CheckOldDat(RootFolder, 'ARDX.DAT');
+      CheckOldDat(RootFolder, 'ARRL10.DAT');
    end;
    
    Result := True;
