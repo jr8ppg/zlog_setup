@@ -295,12 +295,12 @@ begin
    StringChange(dstfile, '{app}', ExpandConstant('{app}'));
 
    srcfile := dstfile + BakString;
-      
-   // 元ファイル
-   SRC.LoadFromFile(srcfile);
-   
+         
    // 新ファイル
-   if FileExists(dstfile) = True then begin
+   if FileExists(srcfile) = True then begin
+      // 元ファイル
+      SRC.LoadFromFile(srcfile);
+      
       DST.LoadFromFile(dstfile);
 
       // 中身が同じならスキップ
@@ -332,11 +332,11 @@ begin
       CopyCfgItem(SRC, DST, 'F6_B');
       CopyCfgItem(SRC, DST, 'F7_B');
       CopyCfgItem(SRC, DST, 'F8_B');
+
+      // dstfileに保存
+      DST.SaveToFile(dstfile);
    end;
-   
-   // dstfileに保存
-   DST.SaveToFile(dstfile);
-   
+      
    SRC.Free();
    DST.Free();
 end;
