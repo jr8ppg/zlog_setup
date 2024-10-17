@@ -97,7 +97,7 @@ Source: files\cfg_dat_dx\eudx\*.dat; DestDir: "{app}\cfg_dat"; Components: "Opti
 
 // Documents
 Source: "files\ZLOG 令和EDITION V2.9 リグコントロール設定.pdf"; DestDir: {app}; Components: "Options\Documents";
-Source: "files\zlog_v2922_release_note.pdf"; DestDir: {app}; Components: "Options\Documents";
+Source: "files\zlog_v2924_release_note.pdf"; DestDir: {app}; Components: "Options\Documents";
 
 [#Dirs]
 Name: "{app}\cfg_dat"
