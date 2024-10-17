@@ -77,7 +77,7 @@ Source: files\x86\zlog_telnet.exe; DestDir: {app}; Components: Main; Flags: igno
 Source: files\x86\zlog.exe; DestDir: {app}; Components: Main; Flags: ignoreversion; Check: not Is64BitInstallMode;
 
 // common files
-Source: files\zlog.ini; DestDir: {app};
+// Source: files\zlog.ini; DestDir: {app};
 Source: files\cty.dat; DestDir: {app}; Components: Main;
 Source: files\cty_copyright.txt; DestDir: {app}; Components: Main;
 Source: files\clusterlist.txt; DestDir: {app}; Components: Main; Flags: onlyifdoesntexist;
