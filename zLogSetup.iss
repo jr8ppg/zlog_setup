@@ -84,16 +84,16 @@ Source: files\clusterlist.txt; DestDir: {app}; Components: Main; Flags: onlyifdo
 Source: files\ZLOGHELP.TXT; DestDir: {app}; Components: Main; Flags: onlyifdoesntexist;
 
 // CFG&DAT(JA)
-Source: files\cfg_dat\*.cfg; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatJa"; BeforeInstall: BeforeCfgInstall; AfterInstall: AfterCfgInstall; Flags: uninsneveruninstall;
-Source: files\cfg_dat\*.dat; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatJa"; Flags: uninsneveruninstall;
+Source: files\cfg_dat\*.cfg; DestDir: "{code:MyCfgDatFolder}"; Components: "Options\CfgDatJa"; BeforeInstall: BeforeCfgInstall; AfterInstall: AfterCfgInstall; Flags: uninsneveruninstall;
+Source: files\cfg_dat\*.dat; DestDir: "{code:MyCfgDatFolder}"; Components: "Options\CfgDatJa"; Flags: uninsneveruninstall;
 
 // CFG&DAT(DX)
-Source: files\cfg_dat_dx\arrl160\*.cfg; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; BeforeInstall: BeforeCfgInstall; AfterInstall: AfterCfgInstall; Flags: uninsneveruninstall;
-Source: files\cfg_dat_dx\arrl160\*.dat; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; Flags: uninsneveruninstall;
-Source: files\cfg_dat_dx\dxcfg12\*.cfg; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; BeforeInstall: BeforeCfgInstall; AfterInstall: AfterCfgInstall; Flags: uninsneveruninstall;
-Source: files\cfg_dat_dx\dxcfg12\*.dat; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; Flags: uninsneveruninstall;
-Source: files\cfg_dat_dx\eudx\*.cfg; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; BeforeInstall: BeforeCfgInstall; AfterInstall: AfterCfgInstall; Flags: uninsneveruninstall;
-Source: files\cfg_dat_dx\eudx\*.dat; DestDir: "{app}\cfg_dat"; Components: "Options\CfgDatDx"; Flags: uninsneveruninstall;
+Source: files\cfg_dat_dx\arrl160\*.cfg; DestDir: "{code:MyCfgDatFolder}"; Components: "Options\CfgDatDx"; BeforeInstall: BeforeCfgInstall; AfterInstall: AfterCfgInstall; Flags: uninsneveruninstall;
+Source: files\cfg_dat_dx\arrl160\*.dat; DestDir: "{code:MyCfgDatFolder}"; Components: "Options\CfgDatDx"; Flags: uninsneveruninstall;
+Source: files\cfg_dat_dx\dxcfg12\*.cfg; DestDir: "{code:MyCfgDatFolder}"; Components: "Options\CfgDatDx"; BeforeInstall: BeforeCfgInstall; AfterInstall: AfterCfgInstall; Flags: uninsneveruninstall;
+Source: files\cfg_dat_dx\dxcfg12\*.dat; DestDir: "{code:MyCfgDatFolder}"; Components: "Options\CfgDatDx"; Flags: uninsneveruninstall;
+Source: files\cfg_dat_dx\eudx\*.cfg; DestDir: "{code:MyCfgDatFolder}"; Components: "Options\CfgDatDx"; BeforeInstall: BeforeCfgInstall; AfterInstall: AfterCfgInstall; Flags: uninsneveruninstall;
+Source: files\cfg_dat_dx\eudx\*.dat; DestDir: "{code:MyCfgDatFolder}"; Components: "Options\CfgDatDx"; Flags: uninsneveruninstall;
 
 // Documents
 Source: "files\ZLOG 令和EDITION V2.9 リグコントロール設定.pdf"; DestDir: {app}; Components: "Options\Documents";
@@ -127,6 +127,21 @@ var
   RootFolder: string;
   CfgDatFolder: string;
 
+function MyCfgDatFolder(Param: String): string;
+begin
+   Result := CfgDatFolder;
+end;
+
+function isfullpath(path: string): Boolean;
+begin
+   if Copy(path, 2, 2) = ':\' then begin
+      Result := True;
+   end
+   else  begin
+      Result := False;
+   end;
+end;
+  
 procedure CheckOldDat(folder: string; datfile: string);
 var
    S: string;
@@ -153,7 +168,6 @@ var
 begin
    if CurStep = ssPostInstall then begin
       ini := ExpandConstant('{app}') + '\zlog.ini';
-      S1 := GetIniString('Preferences', 'RootPath', '%ZLOG_ROOT%', ini);
       S2 := GetIniString('Preferences', 'CFGDATPath', 'cfg_dat', ini);
       S3 := GetIniString('Preferences', 'LogsPath', 'log', ini);
       S4 := GetIniString('Preferences', 'BackUpPath', 'backup', ini);
@@ -161,15 +175,6 @@ begin
       S6 := GetIniString('SuperCheck', 'Folder', 'spc', ini);
       S7 := GetIniString('zylo', 'path', 'plugin', ini);
    
-      if S1 = '%ZLOG_ROOT%' then begin
-         RootFolder := ExpandConstant('{app}');
-      end
-      else begin
-         RootFolder := S1;
-      end;
-
-      CfgDatFolder := RootFolder + '\' + S2;
-      
       CreateDir(CfgDatFolder);
       CreateDir(RootFolder + '\' + S3);
       CreateDir(RootFolder + '\' + S4);
@@ -177,7 +182,7 @@ begin
       CreateDir(RootFolder + '\' + S6);
       CreateDir(RootFolder + '\' + S7);
       
-      SetIniString('Preferences', 'RootPath', S1, ini);
+      SetIniString('Preferences', 'RootPath', RootFolder, ini);
       SetIniString('Preferences', 'CFGDATPath', S2, ini);
       SetIniString('Preferences', 'LogsPath', S3, ini);
       SetIniString('Preferences', 'BackUpPath', S4, ini);
@@ -220,12 +225,30 @@ end;
 function NextButtonClick(CurPageID: Integer): Boolean;
 var
    ini: string;
+   S1, S2: string;
 begin
    if CurPageID = wpSelectDir then begin
       ini := ExpandConstant('{app}') + '\zlog.ini';
 
       if FileExists(ini) = False then begin
          FileCopy('files\zlog.ini', ini, False);
+      end;
+
+      S1 := GetIniString('Preferences', 'RootPath', '%ZLOG_ROOT%', ini);
+      S2 := GetIniString('Preferences', 'CFGDATPath', 'cfg_dat', ini);
+   
+      if S1 = '%ZLOG_ROOT%' then begin
+         RootFolder := ExpandConstant('{app}');
+      end
+      else begin
+         RootFolder := S1;
+      end;
+
+      if isfullpath(S2) then begin
+         CfgDatFolder := S2;
+      end
+      else begin 
+         CfgDatFolder := RootFolder + '\' + S2;
       end;
 
       UserPage.Values[0] := GetIniString('Categories', 'MyCall', '', ini);
