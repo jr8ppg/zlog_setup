@@ -1,0 +1,16 @@
+RAC.DAT
+NB,VE9         New Brunswick
+NS             Nova Scotia
+PE,PEI,VY2     Prince Edward Is.
+PQ,QC,QU,VE2   Quebec
+ON,VE3         Ontario
+MB,MAN,VE4     Manitoba
+SK,SA,VE5      Saskatchewan
+AB,ALT,ALB,VE6 Alberta
+BC,VE7         Br. Columbia
+NWT,NT,VE8     Northwest Territories
+YUK,YU,YT,VY1  Yukon
+NF,VO1         Newfoundland
+LAB,LB,VO2     Labrador
+VY,VY0         Nunavut
+end of file rac.dat
