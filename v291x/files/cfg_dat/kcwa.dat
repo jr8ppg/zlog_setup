@@ -2,7 +2,6 @@ non-aja KCWA.DAT for ZLOGCG.EXE
 SY         宗谷
 RM         留萌
 KK         上川
-AB         旧網走
 OH         オホーツク振興局
 SC         空知
 IS         石狩
@@ -23,10 +22,6 @@ FS         福島
 NI         新潟
 NN         長野
 TK         東京
-OH         大島
-MY         三宅
-HJ         八丈
-OG         小笠原
 KN         神奈川
 CB         千葉
 ST         埼玉
@@ -59,10 +54,11 @@ KC         高知
 FO         福岡
 SG         佐賀
 NS         長崎
-TM         対馬
 KM         熊本
 OT         大分
 MZ         宮崎
 KG         鹿児島
 ON         沖縄
+OG         小笠原
+MT         南鳥島 　　
 end of file kcwa.dat
