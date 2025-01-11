@@ -1,0 +1,264 @@
+EUDX.DAT
+AT01       OE:Vienna
+AT02       OE:Salzburg
+AT03       OE:Lower Austria
+AT04       OE:Burgenland
+AT05       OE:Upper Austria
+AT06       OE:Styria
+AT07       OE:Tyrol
+AT08       OE:Carinthia
+AT09       OE:Vorarlberg
+BE01       ON:Flanders
+BE02       ON:Wallonia
+BE03       ON:Brussels-Capital Region
+BG01       LZ:Severozapaden
+BG02       LZ:Severen tsentralen
+BG03       LZ:Severoiztochen
+BG04       LZ:Yugoiztochen
+BG05       LZ:Yugozapaden
+BG06       LZ:Yuzhen tsentralen
+CZ01       OK:Prague
+CZ02       OK:South Bohemia
+CZ03       OK:South Moravia
+CZ04       OK:Karlovy Vary
+CZ05       OK:Hradec Kralove
+CZ06       OK:Liberec
+CZ07       OK:Moravia-Silesia
+CZ08       OK:Olomouc
+CZ09       OK:Pardubice
+CZ10       OK:Plzen
+CZ11       OK:Central Bohemia
+CZ12       OK:Usti nad Labem
+CZ13       OK:Zlin
+CZ14       OK:Vysocina
+CY01       5B:Nicosia
+CY02       5B:Famagusta
+CY03       5B:Limassol
+CY04       5B:Larnaca
+CY05       5B:Paphos
+HR01       9A:Croatia Proper
+HR02       9A:Dalmatia
+HR03       9A:Slavonia
+HR04       9A:Istria
+DK01       OZ:Region Hovedstaden
+DK02       OZ:Region Midtjylland
+DK03       OZ:Region Nordjylland
+DK04       OZ:Region Sjaelland
+DK05       OZ:Region Syddanmark
+DK06       OX:Overseas Countries and Territories
+EE01       ES:Northern Estonia
+EE02       ES:Western Estonia
+EE03       ES:Central Estonia
+EE04       ES:Northeastern Estonia
+EE05       ES:Southern Estonia
+FI01       OH:Lapland
+FI02       OH:North Ostrobothnia
+FI03       OH:Kainuu
+FI04       OH:North Karelia
+FI05       OH:North Savo
+FI06       OH:South Savo
+FI07       OH:South Karelia
+FI08       OH:Central Finland
+FI09       OH:South Ostrobothnia
+FI10       OH:Ostrobothnia
+FI11       OH:Central Ostrobothnia
+FI12       OH:Pirkanmaa
+FI13       OH:Satakunta
+FI14       OH:Paijat-Hame
+FI15       OH:Kanta-Hame
+FI16       OH:Kymenlaakso
+FI17       OH:Uusimaa
+FI18       OH:Southwest Finland
+FI19       OH0:Aland
+FR01       F:Auvergne-Rhone-Alpes
+FR02       F:Bourgogne-Franche-Comte
+FR03       F:Bretagne (Brittany)
+FR04       F:Centre-Val de Loire
+FR05       TK:Corse (Corsica)
+FR06       F:Grand Est (Great East)
+FR07       F:Hauts-de-France
+FR08       F:Ile-de-France
+FR09       F:Normandie (Normandy)
+FR10       F:Nouvelle-Aquitaine (New Aquitaine)
+FR11       F:Occitanie
+FR12       F:Pays de la Loire
+FR13       F:Provence-Alpes-Cote dÅfAzur
+FR14       FY:French Guiana
+FR15       FG:Guadeloupe
+FR16       FM:Martinique
+FR17       FH:Mayotte
+FR18       FR:La Reunion
+FR19       FS:Saint Martin
+FR20       FO/FK/FW/FJ/FT:France dÅfoutre-mer
+DE01       DL:Baden-Wurttemberg
+DE02       DL:Bavaria
+DE03       DL:Berlin
+DE04       DL:Brandenburg
+DE05       DL:Bremen
+DE06       DL:Hamburg
+DE07       DL:Hesse
+DE08       DL:Lower Saxony
+DE09       DL:Mecklenburg-Vorpommern
+DE10       DL:North Rhine-Westphalia
+DE11       DL:Rhineland-Palatinate
+DE12       DL:Saarland
+DE13       DL:Saxony
+DE14       DL:Saxony-Anhalt
+DE15       DL:Schleswig-Holstein
+DE16       DL:Thuringia
+GR01       SV:Attica
+GR02       SV:Central Greece
+GR03       SV:Central Macedonia
+GR04       SV9:Crete
+GR05       SV:Eastern Macedonia and Thrace
+GR06       SV:Epirus
+GR07       SV:Ionian Islands
+GR08       SV:North Aegean
+GR09       SV:Peloponnese
+GR10       SV:South Aegean
+GR11       SV:Thessaly
+GR12       SV:Western Greece
+GR13       SV:Western Macedonia
+HU01       HA:Northern Hungary
+HU02       HA:Northern Great Plain
+HU03       HA:Southern Great Plain
+HU04       HA:Central Hungary
+HU05       HA:Central Transdanubia
+HU06       HA:Western Transdanubia
+HU07       HA:Southern Transdanubia
+IE01       EI:Leinster
+IE02       EI:Ulster
+IE03       EI:Munster
+IE04       EI:Connacht
+IT01       I:Abruzzo
+IT02       I:Aosta Valley
+IT03       I:Puglia
+IT04       I:Basilicata
+IT05       I:Calabria
+IT06       I:Campania
+IT07       I:Emilia-Romagna
+IT08       I:Friuli-Venezia Giulia
+IT09       I:Lazio
+IT10       I:Liguria
+IT11       I:Lombardia
+IT12       I:Marche
+IT13       I:Molise
+IT14       I:Piemonte
+IT15       IS:Sardegna
+IT16       I:Sicilia
+IT17       I:Pantelleria/Lampedusa/Linosa, AF
+IT18       I:Trentino-Alto Adige
+IT19       I:Toscana
+IT20       I:Umbria
+IT21       I:Veneto
+LV01       YL:Riga
+LV02       YL:Kurzeme
+LV03       YL:Latgale
+LV04       YL:Zemgale
+LV05       YL:Vidzeme
+LT01       LY:North (Siauliai County, Panevezys County)
+LT02       LY:East (Vilnius County, Utena County)
+LT03       LY:Central (Taurage County, Kaunas County)
+LT04       LY:West (Klaipeda County, Telsiai County)
+LT05       LY:South ( Marijampole County, Alytus County)
+LX01       LX:Luxembourg
+MT01       9H:San Gwann
+MT02       9H:Gozo Region
+MT03       9H:Northern Region
+MT04       9H:South Eastern Region
+MT05       9H:Southern Region
+NL01       PA:Drenthe
+NL02       PA:Flevoland
+NL03       PA:Friesland
+NL04       PA:Gelderland
+NL05       PA:Groningen
+NL06       PA:Limburg
+NL07       PA:North Brabant
+NL08       PA:North Holland
+NL09       PA:Overijssel
+NL10       PA:South Holland
+NL11       PA:Utrecht
+NL12       PA:Zeeland
+NL13       PJ2/P4/PJ7/PJ4/PJ5:Overseas Countries and Territories
+PL01       SP:Greater Poland
+PL02       SP:Kuyavia-Pomerania
+PL03       SP:Lesser Poland
+PL04       SP:Lodz
+PL05       SP:Lower Silesia
+PL06       SP:Lublin
+PL07       SP:Lubusz
+PL08       SP:Masovia
+PL09       SP:Opole
+PL10       SP:Podlaskie
+PL11       SP:Pomerania
+PL12       SP:Silesia
+PL13       SP:Subcarpathia
+PL14       SP:Holy Cross Province
+PL15       SP:Warmia-Masuria
+PL16       SP:West Pomerania
+PT01       CT:Acores
+PT02       CT:Alentejo
+PT03       CT:Algarve
+PT04       CT:Centro
+PT05       CT:Lisboa e Vale Do Tejo
+PT06       CT3:Madeira, AF
+PT07       CT:Norte
+RO01       YO:Nord-Est development region
+RO02       YO:Sud-Est development region
+RO03       YO:Sud - Muntenia development region
+RO04       YO:Sud-Vest Oltenia development region
+RO05       YO:Vest development region
+RO06       YO:Nord-Vest development region
+RO07       YO:Centru development region
+RO08       YO:Bucuresti - Ilfov development region
+SK01       OM:Bratislava
+SK02       OM:Trnava
+SK03       OM:Trencin
+SK04       OM:Nitra
+SK05       OM:Zilina
+SK06       OM:Banska Bystrica
+SK07       OM:Presov
+SK08       OM:Kosice
+SI01       S5:Eastern Slovenia
+SI02       S5:Western Slovenia
+ES01       EA:Andalusia
+ES02       EA:Catalonia
+ES03       EA:Community of Madrid
+ES04       EA:Valencian Community
+ES05       EA:Galicia
+ES06       EA:Castile and Leon
+ES07       EA:Basque Autonomous Community
+ES08       EA:Castilla-La Mancha
+ES09       EA8:Canary Islands , AF
+ES10       EA:Region of Murcia
+ES11       EA:Aragon
+ES12       EA:Extremadura
+ES13       EA6:Balearic Islands
+ES14       EA:Principality of Asturias
+ES15       EA:Chartered Community of Navarre
+ES16       EA:Cantabria
+ES17       EA:La Rioja
+ES18       EA9:Ceuta, AF
+ES19       EA9:Melilla, AF
+SE01       SM:Stockholm
+SE02       SM:Uppsala
+SE03       SM:Sodermanland
+SE04       SM:Ostergotland
+SE05       SM:Jonkoping
+SE06       SM:Kronoberg
+SE07       SM:Kalmar
+SE08       SM:Gotland
+SE09       SM:Blekinge
+SE10       SM:Skane
+SE11       SM:Halland
+SE12       SM:Vastra Gotaland
+SE13       SM:Varmland
+SE14       SM:Orebro
+SE15       SM:Vastmanland
+SE16       SM:Dalarna
+SE17       SM:Gavleborg
+SE18       SM:Vasternorrland
+SE19       SM:Jamtland
+SE20       SM:Vasterbotten
+SE21       SM:Norrbotten
+end of file eudx.dat
