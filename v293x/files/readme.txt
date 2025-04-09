@@ -1,7 +1,19 @@
+zLog令和Edition バージョン2.9.3.6
+
+V2.9.3.5より以下の改良を行いました。
+詳しくは同梱のzlog_v2936_release_note.pdfを参照して下さい。
+
+・クイック起動機能の追加
+・Grayline表示の改良
+・電通大VUSコンテストの対応（UECVUS.CFG）
+・バンドスコープからのQSY時にFixEdgeを設定
+
+-------------
+
 zLog令和Edition バージョン2.9.3.5
 
 V2.9.3.4より以下の改良を行いました。
-詳しくは同梱のzlog_v2934_release_note.pdfを参照して下さい。
+詳しくは同梱のzlog_v2935_release_note.pdfを参照して下さい。
 
 ・Grayline表示の追加
 ・Additional I/Oでのインポート不具合修正
