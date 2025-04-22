@@ -14,7 +14,7 @@ ArchitecturesInstallIn64BitMode=x64compatible
 AppName=zLog
 
 // アプリ名＋バージョン
-AppVerName=zLog 令和 Edition Version 2.9.3.8
+AppVerName=zLog 令和 Edition Version 2.9.3.9
 
 // アーカイブ名
 OutputBaseFilename=zLogSetup
@@ -26,7 +26,7 @@ DefaultDirName=D:\zlogwin
 UsePreviousAppDir=no
 
 // インストーラファイルのバージョン
-VersionInfoVersion=2.9.3.8
+VersionInfoVersion=2.9.3.9
 // インストーラファイルの説明
 VersionInfoDescription=zLog令和Edition セットアップ
 // インストーラファイルのCOPYRIGHT
@@ -97,7 +97,7 @@ Source: files\cfg_dat_dx\eudx\*.dat; DestDir: "{code:MyCfgDatFolder}"; Component
 
 // Documents
 Source: "files\ZLOG 令和EDITION V2.9 リグコントロール設定.pdf"; DestDir: {app}; Components: "Options\Documents";
-Source: "files\zlog_v2938_release_note.pdf"; DestDir: {app}; Components: "Options\Documents";
+Source: "files\zlog_v2939_release_note.pdf"; DestDir: {app}; Components: "Options\Documents";
 
 [#Dirs]
 Name: "{app}\cfg_dat"
