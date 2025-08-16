@@ -8,7 +8,7 @@ zLog令和Edition バージョン2.9.5.1
 ・#797 FTX-1対応
 ・#827 HAMLOG用CSVの改善
 ・#831 Cabrillo作成ウインドウの表示スケール対応
-・#832 QSOEdit後の戻り先化以前
+・#832 QSOEdit後の戻り先改善
 ・#833 microHAM社micro2R(u2R)対応
 
 不具合修正
