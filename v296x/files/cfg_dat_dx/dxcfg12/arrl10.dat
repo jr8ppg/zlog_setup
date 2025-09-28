@@ -1,0 +1,131 @@
+ardx.dat for cccardx.exe
+Connecticut                    CT       
+  CT,CON,CONN;
+Massachussetts                 MA       
+  MA;
+Maine                          ME       
+  ME,MAI;
+New Hampshire                  NH       
+  NH;
+Rhode Island                   RI       
+  RI;
+Vermont                        VT       
+  VT;
+New York                       NY       
+  NY;
+New Jersey                     NJ       
+  NJ;
+Delaware                       DE       
+  DE,DL;
+Pennsylvania                   PA       
+  PA;
+Maryland                       MD       
+  MD;
+Dist of Columbia               DC       
+  DC;
+Alabama                        AL       
+  AL;
+Georgia                        GA       
+  GA;
+Kentucky                       KY       
+  KY,KTY;
+North Carolina                 NC       
+  NC;
+Florida                        FL       
+  FL;
+South Carolina                 SC       
+  SC;
+Tennessee                      TN       
+  TN,TEN;
+Virginia                       VA       
+  VA;
+Arkansas                       AR       
+  AR;
+Louisiana                      LA       
+  LA,LOU;
+Mississippi                    MS       
+  MS,MIS;
+New Mexico                     NM       
+  NM;
+Texas                          TX       
+  TX,TEX;
+Oklahoma                       OK       
+  OK,OKL;
+California                     CA       
+  CA;
+Arizona                        AZ       
+  AZ,ARI;
+Idaho                          ID       
+  ID;
+Montana                        MT       
+  MT,MON;
+Nevada                         NV       
+  NV,NEV;
+Oregon                         OR       
+  OR,ORE;
+Utah                           UT       
+  UT;
+Washington                     WA       
+  WA,WAS;
+Wyoming                        WY       
+  WY;
+Michigan                       MI       
+  MI,MIC;
+Ohio                           OH       
+  OH;
+West Virginia                  WV       
+  WV;
+Illinois                       IL       
+  IL,ILL;
+Indiana                        IN       
+  IN;
+Wisconsin                      WI       
+  WI,WS,WIS;
+Cololado                       CO       
+  CO;
+Iowa                           IA       
+  IA,IO;
+Kansas                         KS       
+  KS,KA;
+Minnesota                      MN       
+  MN,MIN;
+Missouri                       MO       
+  MO;
+Nebraska                       NE       
+  NE,NEB;
+North Dakota                   ND       
+  ND;
+South Dakota                   SD       
+  SD;
+Alaska                         AK       
+  AK;
+Hawaii                         HI       
+  HI;
+New Brunswick                  NB       
+  NB;
+Nova Scotia                    NS       
+  NS;
+Prince Edward Is.              PEI      
+  PEI;
+Quebec                         PQ       
+  PQ;
+Ontario                        ON       
+  ON;
+Manitoba                       MB       
+  MB;
+Saskatchewan                   SK       
+  SK;
+Alberta                        AB       
+  AB;
+Br. Columbia                   BC       
+  BC;
+Northwest Territories          NWT      
+  NWT;
+Yukon                          YUK      
+  YUK;
+Newfoundland                   NF       
+  NF;
+Labrador                       LAB      
+  LAB;
+end of file ardx.dat
+
