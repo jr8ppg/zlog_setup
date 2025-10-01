@@ -89,6 +89,7 @@ Source: files\cty.dat; DestDir: {app}; Components: Main;
 Source: files\cty_copyright.txt; DestDir: {app}; Components: Main;
 Source: files\clusterlist.txt; DestDir: {app}; Components: Main; Flags: onlyifdoesntexist;
 Source: files\ZLOGHELP.TXT; DestDir: {app}; Components: Main; Flags: onlyifdoesntexist;
+Source: files\LICENSE.txt; DestDir: {app}; Components: Main; Flags: onlyifdoesntexist;
 
 // CFG&DAT(JA)
 Source: files\cfg_dat\*.cfg; DestDir: "{code:MyCfgDatFolder}"; Components: "Options\CfgDatJa"; BeforeInstall: BeforeCfgInstall; AfterInstall: AfterCfgInstall; Flags: uninsneveruninstall;
