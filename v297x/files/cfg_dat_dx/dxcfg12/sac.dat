@@ -1,0 +1,184 @@
+sac.dat for zLog for Windows
+Svalbard/1                40   JW1 
+  JW1;
+Svalbard/2                40   JW2 
+  JW2;
+Svalbard/3                40   JW3 
+  JW3;
+Svalbard/4                40   JW4 
+  JW4;
+Svalbard/5                40   JW5 
+  JW5;
+Svalbard/6                40   JW6 
+  JW6;
+Svalbard/7                40   JW7 
+  JW7;
+Svalbard/8                40   JW8 
+  JW8;
+Svalbard/9                40   JW9 
+  JW9;
+Svalbard/0                40   JW0 
+  JW,JW0;
+Jan Mayen/1               40   JX1 
+  JX1;
+Jan Mayen/2               40   JX2 
+  JX2;
+Jan Mayen/3               40   JX3 
+  JX3;
+Jan Mayen/4               40   JX4 
+  JX4;
+Jan Mayen/5               40   JX5 
+  JX5;
+Jan Mayen/6               40   JX6 
+  JX6;
+Jan Mayen/7               40   JX7 
+  JX7;
+Jan Mayen/8               40   JX8 
+  JX8;
+Jan Mayen/9               40   JX9 
+  JX9;
+Jan Mayen/0               40   JX0 
+  JX,JX0;
+Norway/1                  14   LA1 
+  LA1,LB1,LG1,LE1,LF1,LH1,LC1,LD1,LI1,LJ1,LK1,LL1,LN1,LM1;
+Norway/2                  14   LA2 
+  LA2,LB2,LG2,LE2,LF2,LH2,LC2,LD2,LI2,LJ2,LK2,LL2,LN2,LM2;
+Norway/3                  14   LA3 
+  LA3,LB3,LG3,LE3,LF3,LH3,LC3,LD3,LI3,LJ3,LK3,LL3,LN3,LM3;
+Norway/4                  14   LA4 
+  LA4,LB4,LG4,LE4,LF4,LH4,LC4,LD4,LI4,LJ4,LK4,LL4,LN4,LM4;
+Norway/5                  14   LA5 
+  LA5,LB5,LG5,LE5,LF5,LH5,LC5,LD5,LI5,LJ5,LK5,LL5,LN5,LM5;
+Norway/6                  14   LA6 
+  LA6,LB6,LG6,LE6,LF6,LH6,LC6,LD6,LI6,LJ6,LK6,LL6,LN6,LM6;
+Norway/7                  14   LA7 
+  LA7,LB7,LG7,LE7,LF7,LH7,LC7,LD7,LI7,LJ7,LK7,LL7,LN7,LM7;
+Norway/8                  14   LA8 
+  LA8,LB8,LG8,LE8,LF8,LH8,LC8,LD8,LI8,LJ8,LK8,LL8,LN8,LM8;
+Norway/9                  14   LA9 
+  LA9,LB9,LG9,LE9,LF9,LH9,LC9,LD9,LI9,LJ9,LK9,LL9,LN9,LM9;
+Norway/0                  14   LA0 
+  LA,LA0,LB0,LG0,LE0,LF0,LH0,LC0,LD0,LI0,LJ0,LK0,LL0,LN0,LM0;
+Finland/1                 14   OH1 
+  OF1,OG1,OH1,OI1;
+Finland/2                 14   OH2 
+  OF2,OG2,OH2,OI2;
+Finland/3                 14   OH3 
+  OF3,OG3,OH3,OI3;
+Finland/4                 14   OH4 
+  OF4,OG4,OH4,OI4;
+Finland/5                 14   OH5 
+  OF5,OG5,OH5,OI5;
+Finland/6                 14   OH6 
+  OF6,OG6,OH6,OI6;
+Finland/7                 14   OH7 
+  OF7,OG7,OH7,OI7;
+Finland/8                 14   OH8 
+  OF8,OG8,OH8,OI8;
+Finland/9                 14   OH9 
+  OF9,OG9,OH9,OI9;
+Aland Is. Finland/0       14   OH0 
+  OF,OG,OH,OI,OF0,OG0,OH0;
+Market Reef               14   OJ0 
+  OJ0;
+Greenland/1               40   OX1 
+  OX1;
+Greenland/2               40   OX2 
+  OX2;
+Greenland/3               40   OX3 
+  OX3;
+Greenland/4               40   OX4 
+  OX4;
+Greenland/5               40   OX5 
+  OX5;
+Greenland/6               40   OX6 
+  OX6;
+Greenland/7               40   OX7 
+  OX7;
+Greenland/8               40   OX8 
+  OX8;
+Greenland/9               40   OX9 
+  OX9;
+Greenland/0               40   OX0 
+  OX,OX0;
+Faeroe Is./1              14   OY1 
+  OY1;
+Faeroe Is./2              14   OY2 
+  OY2;
+Faeroe Is./3              14   OY3 
+  OY3;
+Faeroe Is./4              14   OY4 
+  OY4;
+Faeroe Is./5              14   OY5 
+  OY5;
+Faeroe Is./6              14   OY6 
+  OY6;
+Faeroe Is./7              14   OY7 
+  OY7;
+Faeroe Is./8              14   OY8 
+  OY8;
+Faeroe Is./9              14   OY9 
+  OY9;
+Faeroe Is./0              14   OY0 
+  OY,OY0;
+Denmark/1                 14   OZ1 
+  OZ1,5P1;
+Denmark/2                 14   OZ2 
+  OZ2,5P2;
+Denmark/3                 14   OZ3 
+  OZ3,5P3;
+Denmark/4                 14   OZ4 
+  OZ4,5P4;
+Denmark/5                 14   OZ5 
+  OZ5,5P5;
+Denmark/6                 14   OZ6 
+  OZ6,5P6;
+Denmark/7                 14   OZ7 
+  OZ7,5P7;
+Denmark/8                 14   OZ8 
+  OZ8,5P8;
+Denmark/9                 14   OZ9 
+  OZ9,5P9;
+Denmark/0                 14   OZ0 
+  OZ,5P,OZ0,5P0;
+Sweden/1                  14   SM1 
+  SI1,SJ1,SK1,SL1,SM1,7S1,8S1;
+Sweden/2                  14   SM2 
+  SI2,SJ2,SK2,SL2,SM2,7S2,8S2;
+Sweden/3                  14   SM3 
+  SI3,SJ3,SK3,SL3,SM3,7S3,8S3;
+Sweden/4                  14   SM4 
+  SI4,SJ4,SK4,SL4,SM4,7S4,8S4;
+Sweden/5                  14   SM5 
+  SI5,SJ5,SK5,SL5,SM5,7S5,8S5;
+Sweden/6                  14   SM6 
+  SI6,SJ6,SK6,SL6,SM6,7S6,8S6;
+Sweden/7                  14   SM7 
+  SI7,SJ7,SK7,SL7,SM7,7S7,8S7;
+Sweden/8                  14   SM8 
+  SI8,SJ8,SK8,SL8,SM8,7S8,8S8;
+Sweden/9                  14   SM9 
+  SI9,SJ9,SK9,SL9,SM9,7S9,8S9;
+Sweden/0                  14   SM0 
+  SI,SJ,SK,SL,SM,7S,8S,SI0,SJ0,SK0,SL0,SM0,7S0,8S0;
+Iceland/1                 40   TF1 
+  TF1;
+Iceland/2                 40   TF2 
+  TF2;
+Iceland/3                 40   TF3 
+  TF3;
+Iceland/4                 40   TF4 
+  TF4;
+Iceland/5                 40   TF5 
+  TF5;
+Iceland/6                 40   TF6 
+  TF6;
+Iceland/7                 40   TF7 
+  TF7;
+Iceland/8                 40   TF8 
+  TF8;
+Iceland/9                 40   TF9 
+  TF9;
+Iceland/0                 40   TF0 
+  TF,TF0;
+end of file sac.dat
