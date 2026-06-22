@@ -10,8 +10,8 @@ ALL JAコンテストでレポートのあった要望や不具合対応を行いました。
 
 ファイル更新
 ・CTY.DATを03 June 2026版にしました。
-・上川支部コンテスト(KSContest.cfg,KSContest.DAT)
-・石狩支部コンテスト(ISBnew_i.cfg,ISBnew_o.cfg,ISBnew.DAT)
+・上川宗谷支部コンテスト(KSContest.cfg,KSContest.DAT)
+・石狩後志支部コンテスト(ISBnew_i.cfg,ISBnew_o.cfg,ISBnew.DAT)
 ・大分コンテスト(oitao.cfg)
 ・岐阜コンテスト(gifu.cfg)
 ・新潟コンテスト(niigata_i.cfg,niigata_o.cfg)
@@ -57,6 +57,10 @@ ALL JAコンテストでレポートのあった要望や不具合対応を行いました。
 #980 Clusterウインドウの動作改善
 #981 ポーリングOFFの場合にVFOを回してもSPモードにならない
 #982 zLog起動直後はRIGのアンテナ切替が間違っている
+#983 バンド変更するとSメーターのピークホールドが解除されない
+#984 JARL E-LOGで参加種目コード欄が小さい
+#985 Ｎ＋１のハイライト不具合
+#986 エンティティ情報表示不具合
 
 -----------------------------------
 
